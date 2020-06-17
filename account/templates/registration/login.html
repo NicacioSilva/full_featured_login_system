@@ -14,14 +14,15 @@
             Please try again.
         </p>
     {% else %}
-        <p>Please, use the following form to log-in:</p>
+        <p>Please, use the following form to log-in. If you don't have an
+            account <a href="{% url "register" %}">register here</a></p>
     {% endif %}
 
     <div class="login">
-        <form action="{% url 'login' %}" method="post" >
+        <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
             {{ form|crispy }}
-            <input type="hidden" name="next" value="{{ next }}" />
+            <input type="hidden" name="next" value="{{ next }}"/>
             <button class="btn btn-lg btn-primary btn-block bg-dark" type="submit">Sign in</button>
         </form>
         <br>

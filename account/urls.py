@@ -8,4 +8,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     # django auth urls
     path('', include('django.contrib.auth.urls')),
+    # registration
+    path('register/', views.register, name='register'),
 ]
