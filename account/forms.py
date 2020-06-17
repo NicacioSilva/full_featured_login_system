@@ -13,11 +13,11 @@ class UserRegistrationForm(forms.ModelForm):
         fields = ('username', 'first_name', 'last_name', 'email')
 
 
-def clean_password2(self):
-    cd = self.cleaned_data
-    if cd['password'] != cd['password2']:
-        raise forms.ValidationError('Passwords don\'t match.')
-    return cd['password2']
+    def clean_password2(self):
+        cd = self.cleaned_data
+        if cd['password'] != cd['password2']:
+            raise forms.ValidationError('Passwords do not match.')
+        return cd['password2']
 
 
 class UserEditForm(forms.ModelForm):
