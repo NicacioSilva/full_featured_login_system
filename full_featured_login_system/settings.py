@@ -90,6 +90,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
+        'NAME': 'pwned_passwords_django.validators.PwnedPasswordsValidator',
+        'OPTIONS': {
+            'error_message': (
+               'That password was Pwned %(amount)d time',
+               'That password was Pwned %(amount)d times',
+            ),
+            'help_message': 'Your password can\'t be a commonly used password.',
+        }
+    },
+    {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
