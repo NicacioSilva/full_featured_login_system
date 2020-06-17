@@ -20,8 +20,14 @@ class UserRegistrationForm(UserCreationForm):
                   'password2']
 
 
-class UserEditForm(UserRegistrationForm):
-    pass
+class UserEditForm(forms.ModelForm):
+    email = forms.EmailField(required=False)
+    first_name = forms.CharField(max_length=20, required=False)
+    last_name = forms.CharField(max_length=20, required=False)
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
 
 
 class ProfileEditForm(forms.ModelForm):
