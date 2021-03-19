@@ -7,7 +7,7 @@ Django==3.0.7
 django-cleanup==5.0.0
 django-crispy-forms==1.9.1
 idna==2.9
-Pillow==7.1.2
+Pillow==8.1.1
 pwned-passwords-django==1.4
 pycparser==2.20
 python-decouple==3.3
